@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Edit Marks</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="{{ student.name }}" required><br><br>
+
+    <label for="class_name">Class:</label>
+    <input type="text" name="class_name" id="class_name" value="{{ student.class_name }}" required><br><br>
+
+    <label for="subject">Subject:</label>
+    <input type="text" name="subject" id="subject" value="{{ student.subject }}" required><br><br>
+
+    <label for="marks">Marks:</label>
+    <input type="number" name="marks" id="marks" value="{{ student.marks }}" required><br><br>
+
+    <button type="submit">Update</button>
+</form>
+{% endblock %}
